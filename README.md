@@ -72,20 +72,20 @@ python_projects/
 ## Roadmap
 
 ### Beginner
-- [ ] 01 - Fundamentals (variables, types, operators)
-- [ ] 02 - Control Flow (if/else, loops)
-- [ ] 03 - Data Structures (lists, dicts, tuples, sets)
-- [ ] 04 - Functions
-- [ ] 05 - String Manipulation
-- [ ] Mini-Projects
+- [x] 01 - Fundamentals (variables, types, operators)
+- [x] 02 - Control Flow (if/else, loops)
+- [x] 03 - Data Structures (lists, dicts, tuples, sets)
+- [x] 04 - Functions
+- [x] 05 - String Manipulation
+- [x] Mini-Projects
 
 ### Intermediate
-- [ ] 01 - Object-Oriented Programming (OOP)
-- [ ] 02 - Modules & Packages
-- [ ] 03 - File Handling
-- [ ] 04 - Error Handling & Exceptions
-- [ ] 05 - List/Dict/Set Comprehensions
-- [ ] Mini-Projects
+- [x] 01 - Object-Oriented Programming (OOP)
+- [x] 02 - Modules & Packages
+- [x] 03 - File Handling
+- [x] 04 - Error Handling & Exceptions
+- [x] 05 - List/Dict/Set Comprehensions
+- [x] Mini-Projects
 
 ### Advanced
 - [ ] 01 - Decorators & Generators

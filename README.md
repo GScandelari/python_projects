@@ -95,7 +95,7 @@ python_projects/
 - [x] Capstone Projects
 
 ### Extras
-- [ ] Data Science (pandas, matplotlib, numpy)
+- [x] Data Science (pandas, matplotlib, numpy)
 - [ ] Web Development (FastAPI / Flask)
 - [ ] Automation & Scraping
 

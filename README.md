@@ -88,11 +88,11 @@ python_projects/
 - [x] Mini-Projects
 
 ### Advanced
-- [ ] 01 - Decorators & Generators
-- [ ] 02 - Concurrency & Async
-- [ ] 03 - Metaclasses
-- [ ] 04 - Design Patterns
-- [ ] Capstone Projects
+- [x] 01 - Decorators & Generators
+- [x] 02 - Concurrency & Async
+- [x] 03 - Testing (pytest)
+- [x] 04 - Design Patterns
+- [x] Capstone Projects
 
 ### Extras
 - [ ] Data Science (pandas, matplotlib, numpy)

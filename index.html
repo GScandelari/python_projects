@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python Projects — GScandelari</title>
+  <meta name="description" content="A complete Python learning repository covering beginner fundamentals to advanced patterns, data science, web development, and automation." />
+  <style>
+    /* ── Reset & Variables ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d1117;
+      --bg-card:   #161b22;
+      --bg-hover:  #1c2128;
+      --border:    #30363d;
+      --border-hl: #3776ab;
+      --py-blue:   #3776ab;
+      --py-yellow: #ffd43b;
+      --text:      #e6edf3;
+      --muted:     #8b949e;
+      --radius:    10px;
+      --gap:       1.5rem;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a { color: var(--py-blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Layout helpers ────────────────────────────────────────── */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section { padding: 4rem 0; }
+    section + section { border-top: 1px solid var(--border); }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+
+    .section-sub {
+      color: var(--muted);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    /* ── Hero ──────────────────────────────────────────────────── */
+    .hero {
+      padding: 5rem 0 4rem;
+      text-align: center;
+      background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(55,118,171,0.18), transparent);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-logo {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1.5rem;
+      display: block;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--text) 40%, var(--py-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-tagline {
+      color: var(--muted);
+      font-size: 1.1rem;
+      margin: 0.75rem auto 2rem;
+      max-width: 540px;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .badge {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .badge span { color: var(--py-yellow); font-weight: 600; }
+
+    .cta-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.65rem 1.4rem;
+      border-radius: var(--radius);
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: opacity 0.15s, transform 0.15s;
+      cursor: pointer;
+    }
+    .btn:hover { opacity: 0.85; transform: translateY(-1px); text-decoration: none; }
+
+    .btn-primary {
+      background: var(--py-blue);
+      color: #fff;
+      border: none;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    /* ── Cards grid ────────────────────────────────────────────── */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--gap);
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.5rem;
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    }
+
+    .card:hover {
+      border-color: var(--border-hl);
+      background: var(--bg-hover);
+      transform: translateY(-2px);
+    }
+
+    .card-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.9rem;
+    }
+
+    .tag {
+      background: rgba(55,118,171,0.12);
+      color: #79aacc;
+      border-radius: 4px;
+      padding: 0.15rem 0.5rem;
+      font-size: 0.75rem;
+    }
+
+    .card-level {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.55rem;
+      border-radius: 4px;
+      margin-bottom: 0.65rem;
+    }
+
+    .level-beginner    { background: rgba(63,185,80,0.15);  color: #3fb950; }
+    .level-intermediate{ background: rgba(210,153,34,0.15); color: #d2991f; }
+    .level-advanced    { background: rgba(248,81,73,0.15);  color: #f85149; }
+    .level-data        { background: rgba(130,80,255,0.15); color: #9a6bff; }
+    .level-web         { background: rgba(56,182,255,0.15); color: #38b6ff; }
+    .level-auto        { background: rgba(255,166,0,0.15);  color: #ffa600; }
+
+    /* ── Resource cards ────────────────────────────────────────── */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: var(--gap);
+    }
+
+    .resource-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.4rem;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+
+    .resource-card:hover {
+      border-color: var(--border-hl);
+      transform: translateY(-2px);
+    }
+
+    .resource-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .resource-card p {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .resource-list {
+      list-style: none;
+      margin-top: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .resource-list li::before {
+      content: '→ ';
+      color: var(--py-blue);
+      font-size: 0.8rem;
+    }
+
+    .resource-list li {
+      font-size: 0.83rem;
+      color: var(--muted);
+    }
+
+    /* ── Stats bar ─────────────────────────────────────────────── */
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 2.5rem 0;
+      justify-content: center;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--py-yellow);
+      display: block;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.3rem;
+    }
+
+    /* ── Footer ────────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    footer p { color: var(--muted); font-size: 0.85rem; }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--text); }
+
+    /* ── Responsive ────────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .hero { padding: 3rem 0 2.5rem; }
+      section { padding: 2.5rem 0; }
+      .stats { gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Hero ───────────────────────────────────────────────────── -->
+  <header class="hero">
+    <div class="container">
+
+      <!-- Python logo (SVG inline) -->
+      <svg class="hero-logo" viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg" aria-label="Python logo">
+        <defs>
+          <linearGradient id="blue" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#5a9fd4"/>
+            <stop offset="100%" stop-color="#3776ab"/>
+          </linearGradient>
+          <linearGradient id="yellow" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffd43b"/>
+            <stop offset="100%" stop-color="#ffe873"/>
+          </linearGradient>
+        </defs>
+        <!-- Top half -->
+        <path d="M54 5 C34 5 22 14 22 28 L22 40 L58 40 L58 44 L14 44 C8 44 4 51 4 58 C4 72 10 82 22 86 L22 72 C22 65 28 60 36 58 L36 40"
+              fill="url(#blue)" opacity="0"/>
+        <path d="M27 10 C27 10 30 6 54 6 C72 6 84 15 84 30 L84 44 L58 44 L58 40 L72 40 L72 30 C72 20 65 16 54 16 C44 16 38 20 38 27 L38 37 L27 37 Z"
+              fill="url(#blue)"/>
+        <circle cx="54" cy="27" r="4" fill="#fff" opacity="0.9"/>
+        <!-- Bottom half -->
+        <path d="M83 100 C83 100 80 104 56 104 C38 104 26 95 26 80 L26 66 L52 66 L52 70 L38 70 L38 80 C38 90 45 94 56 94 C66 94 72 90 72 83 L72 73 L83 73 Z"
+              fill="url(#yellow)"/>
+        <circle cx="56" cy="83" r="4" fill="#fff" opacity="0.7"/>
+      </svg>
+
+      <h1>Python Projects</h1>
+      <p class="hero-tagline">
+        A complete Python learning repository — from fundamentals to production-ready patterns.
+      </p>
+
+      <div class="badges">
+        <div class="badge"><span>7</span> modules</div>
+        <div class="badge">Python <span>3.11+</span></div>
+        <div class="badge"><span>30+</span> exercises</div>
+        <div class="badge"><span>5</span> cheatsheets</div>
+        <div class="badge">MIT License</div>
+      </div>
+
+      <div class="cta-group">
+        <a class="btn btn-primary" href="https://github.com/GScandelari/python_projects" target="_blank" rel="noopener">
+          <!-- GitHub icon -->
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+          </svg>
+          View on GitHub
+        </a>
+        <a class="btn btn-secondary" href="https://github.com/GScandelari/python_projects/tree/main/docs" target="_blank" rel="noopener">
+          Browse Docs
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ── Stats ──────────────────────────────────────────────────── -->
+  <div class="container">
+    <div class="stats">
+      <div class="stat"><span class="stat-value">7</span><div class="stat-label">Learning Modules</div></div>
+      <div class="stat"><span class="stat-value">30+</span><div class="stat-label">Exercises</div></div>
+      <div class="stat"><span class="stat-value">7</span><div class="stat-label">Jupyter Notebooks</div></div>
+      <div class="stat"><span class="stat-value">5</span><div class="stat-label">Cheatsheets</div></div>
+      <div class="stat"><span class="stat-value">3</span><div class="stat-label">Interview Guides</div></div>
+    </div>
+  </div>
+
+  <!-- ── Learning Modules ───────────────────────────────────────── -->
+  <section>
+    <div class="container">
+      <h2>Learning Modules</h2>
+      <p class="section-sub">Structured notebooks, exercises, and solutions for every level.</p>
+
+      <div class="grid-3">
+
+        <!-- Beginner -->
+        <div class="card">
+          <span class="card-level level-beginner">Beginner</span>
+          <span class="card-icon">🐍</span>
+          <h3>Python Fundamentals</h3>
+          <p>Variables, data types, control flow, functions, and data structures with hands-on exercises.</p>
+          <div class="card-tags">
+            <span class="tag">variables</span>
+            <span class="tag">control flow</span>
+            <span class="tag">functions</span>
+            <span class="tag">data structures</span>
+          </div>
+        </div>
+
+        <!-- Intermediate -->
+        <div class="card">
+          <span class="card-level level-intermediate">Intermediate</span>
+          <span class="card-icon">🔧</span>
+          <h3>OOP & File I/O</h3>
+          <p>Object-oriented programming, file handling, modules, and error management patterns.</p>
+          <div class="card-tags">
+            <span class="tag">OOP</span>
+            <span class="tag">classes</span>
+            <span class="tag">file I/O</span>
+            <span class="tag">modules</span>
+          </div>
+        </div>
+
+        <!-- Advanced -->
+        <div class="card">
+          <span class="card-level level-advanced">Advanced</span>
+          <span class="card-icon">⚡</span>
+          <h3>Advanced Python</h3>
+          <p>Decorators, generators, async/await, testing with pytest, and design patterns.</p>
+          <div class="card-tags">
+            <span class="tag">decorators</span>
+            <span class="tag">generators</span>
+            <span class="tag">asyncio</span>
+            <span class="tag">pytest</span>
+          </div>
+        </div>
+
+        <!-- NumPy -->
+        <div class="card">
+          <span class="card-level level-data">Data Science</span>
+          <span class="card-icon">🔢</span>
+          <h3>NumPy</h3>
+          <p>Arrays, broadcasting, vectorised operations, linear algebra, and performance-oriented numerical computing.</p>
+          <div class="card-tags">
+            <span class="tag">arrays</span>
+            <span class="tag">broadcasting</span>
+            <span class="tag">linalg</span>
+          </div>
+        </div>
+
+        <!-- Pandas -->
+        <div class="card">
+          <span class="card-level level-data">Data Science</span>
+          <span class="card-icon">🐼</span>
+          <h3>Pandas</h3>
+          <p>DataFrames, groupby, merge, pivot tables, time series analysis, and real-world data wrangling.</p>
+          <div class="card-tags">
+            <span class="tag">DataFrame</span>
+            <span class="tag">groupby</span>
+            <span class="tag">time series</span>
+          </div>
+        </div>
+
+        <!-- Matplotlib -->
+        <div class="card">
+          <span class="card-level level-data">Data Science</span>
+          <span class="card-icon">📊</span>
+          <h3>Matplotlib</h3>
+          <p>Line, bar, scatter, subplots, heatmaps, custom styling, and publication-quality charts.</p>
+          <div class="card-tags">
+            <span class="tag">plots</span>
+            <span class="tag">subplots</span>
+            <span class="tag">heatmap</span>
+          </div>
+        </div>
+
+        <!-- FastAPI -->
+        <div class="card">
+          <span class="card-level level-web">Web Dev</span>
+          <span class="card-icon">🚀</span>
+          <h3>FastAPI</h3>
+          <p>REST APIs with automatic docs, Pydantic validation, dependency injection, and async endpoints.</p>
+          <div class="card-tags">
+            <span class="tag">REST</span>
+            <span class="tag">Pydantic</span>
+            <span class="tag">async</span>
+          </div>
+        </div>
+
+        <!-- Flask -->
+        <div class="card">
+          <span class="card-level level-web">Web Dev</span>
+          <span class="card-icon">🌶️</span>
+          <h3>Flask</h3>
+          <p>Routes, blueprints, middleware, app factory pattern, and JSON API development.</p>
+          <div class="card-tags">
+            <span class="tag">blueprints</span>
+            <span class="tag">middleware</span>
+            <span class="tag">JSON API</span>
+          </div>
+        </div>
+
+        <!-- Automation -->
+        <div class="card">
+          <span class="card-level level-auto">Automation</span>
+          <span class="card-icon">🤖</span>
+          <h3>Requests & BeautifulSoup</h3>
+          <p>HTTP sessions, retries, CSS selectors, scraping patterns, and pagination handling.</p>
+          <div class="card-tags">
+            <span class="tag">requests</span>
+            <span class="tag">scraping</span>
+            <span class="tag">BeautifulSoup</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Docs & Resources ───────────────────────────────────────── -->
+  <section>
+    <div class="container">
+      <h2>Docs &amp; Resources</h2>
+      <p class="section-sub">Cheatsheets, interview prep, and setup guides — all in Markdown.</p>
+
+      <div class="grid-2">
+
+        <div class="resource-card">
+          <h3>📋 Cheatsheets</h3>
+          <p>Quick-reference sheets for daily use.</p>
+          <ul class="resource-list">
+            <li>Python Core</li>
+            <li>OOP</li>
+            <li>Async / Threading</li>
+            <li>Pandas</li>
+            <li>Git</li>
+          </ul>
+        </div>
+
+        <div class="resource-card">
+          <h3>🎯 Interview Prep</h3>
+          <p>Structured Q&amp;A with code examples.</p>
+          <ul class="resource-list">
+            <li>Python Basics</li>
+            <li>OOP Questions</li>
+            <li>Algorithms &amp; Data Structures</li>
+          </ul>
+        </div>
+
+        <div class="resource-card">
+          <h3>🛠️ Setup Guides</h3>
+          <p>Step-by-step environment configuration.</p>
+          <ul class="resource-list">
+            <li>Virtual Environments &amp; pip</li>
+            <li>pytest &amp; Coverage</li>
+            <li>Jupyter Shortcuts &amp; Magic Commands</li>
+          </ul>
+        </div>
+
+        <div class="resource-card">
+          <h3>🗺️ Learning Roadmap</h3>
+          <p>Structured path from zero to production.</p>
+          <ul class="resource-list">
+            <li>3 levels × 4 modules</li>
+            <li>3 data science tools</li>
+            <li>2 web frameworks</li>
+            <li>2 automation topics</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <p>
+        Built by <a href="https://github.com/GScandelari" target="_blank" rel="noopener">GScandelari</a>
+        &nbsp;·&nbsp;
+        <a href="https://github.com/GScandelari/python_projects" target="_blank" rel="noopener">GitHub</a>
+        &nbsp;·&nbsp;
+        MIT License
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

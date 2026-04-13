@@ -15,7 +15,7 @@ A structured learning repository covering Python from beginner to advanced level
 - [Repository Structure](#repository-structure)
 - [Roadmap](#roadmap)
 - [How to Use](#how-to-use)
-- [Technologies](#technologies)
+- [Dependencies](#dependencies)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -28,7 +28,7 @@ This repository is a curated collection of Python concepts, exercises, and proje
 Each topic follows a consistent structure:
 - A **README** with explanation and examples
 - A **Jupyter Notebook** for interactive learning
-- **Exercises** (easy → medium → challenge)
+- **Exercises** — easy → medium → challenge
 - **Solutions** with detailed explanations
 
 ---
@@ -37,34 +37,60 @@ Each topic follows a consistent structure:
 
 ```
 python_projects/
+│
 ├── beginner/
-│   ├── 01-fundamentals/
-│   ├── 02-control-flow/
-│   ├── 03-data-structures/
+│   ├── 01-fundamentals/          # Variables, types, operators
+│   ├── 02-control-flow/          # if/elif/else, while, for, break/continue
+│   ├── 03-data-structures/       # Lists, dicts, tuples, sets
+│   ├── 04-functions/             # def, args, kwargs, lambda, scope
+│   ├── 05-string-manipulation/   # Formatting, methods, regex basics
 │   └── mini-projects/
+│       ├── 01-number-guessing-game/
+│       ├── 02-contact-book/
+│       └── 03-text-analyzer/
+│
 ├── intermediate/
-│   ├── 01-oop/
-│   ├── 02-modules-packages/
-│   ├── 03-file-handling/
-│   ├── 04-error-handling/
+│   ├── 01-oop/                   # Classes, inheritance, dunder methods
+│   ├── 02-modules-packages/      # import, __init__.py, stdlib tour
+│   ├── 03-file-handling/         # open, pathlib, CSV, JSON
+│   ├── 04-error-handling/        # try/except, custom exceptions, context managers
+│   ├── 05-comprehensions/        # List, dict, set, generator expressions
 │   └── mini-projects/
+│       ├── 01-grade-manager/
+│       ├── 02-finance-tracker/
+│       └── 03-file-organizer/
+│
 ├── advanced/
-│   ├── 01-decorators-generators/
-│   ├── 02-concurrency-async/
-│   ├── 03-metaclasses/
-│   ├── 04-design-patterns/
+│   ├── 01-decorators-generators/ # functools.wraps, args, class-based, yield, send
+│   ├── 02-concurrency-async/     # threading, asyncio, multiprocessing
+│   ├── 03-testing/               # pytest, fixtures, parametrize, Mock, coverage
+│   ├── 04-design-patterns/       # Singleton, Factory, Observer, Strategy, Command…
 │   └── projects/
+│       ├── 01-task-queue/        # threading + PriorityQueue + Observer
+│       ├── 02-test-suite/        # Full pytest suite for a Bank system
+│       └── 03-pattern-library/   # Builder + Observer + generator pipeline
+│
 ├── data-science/
+│   ├── 01-numpy/                 # Arrays, broadcasting, linear algebra
+│   ├── 02-pandas/                # DataFrame, groupby, merge, time series
+│   └── 03-matplotlib/            # Line, bar, scatter, subplots, heatmap
+│
 ├── web-development/
+│   ├── 01-fastapi/               # REST API, Pydantic, deps, async, routers
+│   └── 02-flask/                 # Routes, blueprints, middleware, app factory
+│
 ├── automation/
-├── exercises/
+│   ├── 01-requests-beautifulsoup/ # HTTP requests, scraping, pagination
+│   └── 02-automation/             # pathlib, shutil, subprocess, logging, schedule
+│
+├── assets/                       # Images, diagrams (to be populated)
+├── docs/                         # Extended documentation (to be populated)
+├── exercises/                    # Standalone cross-topic exercise sets (to be populated)
 │   ├── beginner/
 │   ├── intermediate/
 │   └── advanced/
-├── solutions/
-├── notebooks/
-├── assets/
-└── docs/
+├── notebooks/                    # Standalone thematic notebooks (to be populated)
+└── solutions/                    # Standalone cross-topic solutions (to be populated)
 ```
 
 ---
@@ -77,7 +103,7 @@ python_projects/
 - [x] 03 - Data Structures (lists, dicts, tuples, sets)
 - [x] 04 - Functions
 - [x] 05 - String Manipulation
-- [x] Mini-Projects
+- [x] Mini-Projects (Number Guessing Game, Contact Book, Text Analyzer)
 
 ### Intermediate
 - [x] 01 - Object-Oriented Programming (OOP)
@@ -85,19 +111,26 @@ python_projects/
 - [x] 03 - File Handling
 - [x] 04 - Error Handling & Exceptions
 - [x] 05 - List/Dict/Set Comprehensions
-- [x] Mini-Projects
+- [x] Mini-Projects (Grade Manager, Finance Tracker, File Organizer)
 
 ### Advanced
 - [x] 01 - Decorators & Generators
 - [x] 02 - Concurrency & Async
 - [x] 03 - Testing (pytest)
 - [x] 04 - Design Patterns
-- [x] Capstone Projects
+- [x] Capstone Projects (Task Queue, Test Suite, Pattern Library)
 
 ### Extras
-- [x] Data Science (pandas, matplotlib, numpy)
-- [x] Web Development (FastAPI / Flask)
-- [x] Automation & Scraping
+- [x] Data Science (NumPy, Pandas, Matplotlib)
+- [x] Web Development (FastAPI, Flask)
+- [x] Automation & Scraping (Requests, BeautifulSoup, pathlib, schedule)
+
+### Backlog (not yet started)
+- [ ] `assets/` — diagrams and visual aids for each module
+- [ ] `docs/` — extended write-ups, cheat sheets, interview prep
+- [ ] `exercises/` — cross-topic standalone exercise sets
+- [ ] `notebooks/` — thematic standalone notebooks (e.g. algorithms, interview problems)
+- [ ] `solutions/` — cross-topic standalone solutions
 
 ---
 
@@ -116,7 +149,7 @@ python_projects/
    .venv\Scripts\activate         # Windows
    ```
 
-3. **Install dependencies** (if any)
+3. **Install dependencies**
    ```bash
    pip install -r requirements.txt
    ```
@@ -127,13 +160,24 @@ python_projects/
 
 ---
 
-## Technologies
+## Dependencies
 
-- Python 3.10+
-- Jupyter Notebook
-- pytest (for automated exercise checking)
-- pandas, matplotlib, numpy (Data Science section)
-- FastAPI / Flask (Web section)
+| Section | Packages |
+|---|---|
+| Core | Python 3.10+ |
+| Notebooks | `jupyter` |
+| Testing | `pytest pytest-cov pytest-asyncio` |
+| Data Science | `numpy pandas matplotlib` |
+| Web Development | `fastapi uvicorn[standard] flask` |
+| Automation | `requests beautifulsoup4 lxml schedule watchdog` |
+
+Install everything at once:
+```bash
+pip install jupyter pytest pytest-cov pytest-asyncio \
+            numpy pandas matplotlib \
+            fastapi uvicorn[standard] flask \
+            requests beautifulsoup4 lxml schedule watchdog
+```
 
 ---
 

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200" width="900" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#3776ab"/>
+      <stop offset="100%" stop-color="#ffd43b"/>
+    </linearGradient>
+    <linearGradient id="snake_blue" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#4b8bbe"/>
+      <stop offset="100%" stop-color="#306998"/>
+    </linearGradient>
+    <linearGradient id="snake_yellow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#ffe873"/>
+      <stop offset="100%" stop-color="#ffd43b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="200" fill="url(#bg)" rx="12"/>
+
+  <!-- Accent line -->
+  <rect x="0" y="188" width="900" height="4" fill="url(#accent)" rx="0"/>
+
+  <!-- Python logo (simplified snake icon) -->
+  <!-- Blue snake body -->
+  <path d="M62 54 C62 44 70 38 80 38 L104 38 C112 38 118 43 118 52 L118 76 C118 84 112 90 104 90 L80 90 C68 90 62 96 62 108 L62 116"
+        fill="none" stroke="url(#snake_blue)" stroke-width="18" stroke-linecap="round"/>
+  <!-- Yellow snake body -->
+  <path d="M138 146 C138 156 130 162 120 162 L96 162 C88 162 82 157 82 148 L82 124 C82 116 88 110 96 110 L120 110 C132 110 138 104 138 92 L138 84"
+        fill="none" stroke="url(#snake_yellow)" stroke-width="18" stroke-linecap="round"/>
+  <!-- Blue head dot -->
+  <circle cx="62" cy="122" r="9" fill="#4b8bbe"/>
+  <!-- Yellow head dot -->
+  <circle cx="138" cy="78" r="9" fill="#ffd43b"/>
+
+  <!-- Title -->
+  <text x="185" y="90" font-family="'Segoe UI', Arial, sans-serif" font-size="42" font-weight="700" fill="#ffffff" letter-spacing="-1">Python</text>
+  <text x="185" y="138" font-family="'Segoe UI', Arial, sans-serif" font-size="42" font-weight="300" fill="#a0aec0" letter-spacing="-1">Projects</text>
+
+  <!-- Divider -->
+  <rect x="410" y="60" width="2" height="80" fill="#2d3748" rx="1"/>
+
+  <!-- Tag line -->
+  <text x="432" y="88" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#718096">From beginner to advanced</text>
+  <text x="432" y="112" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#718096">Exercises · Solutions · Notebooks</text>
+  <text x="432" y="136" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#718096">Projects · Patterns · APIs</text>
+
+  <!-- Badges -->
+  <rect x="660" y="72" width="108" height="26" rx="5" fill="#2d3748"/>
+  <text x="714" y="90" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#ffd43b" text-anchor="middle" font-weight="600">Python 3.10+</text>
+
+  <rect x="780" y="72" width="90" height="26" rx="5" fill="#2d3748"/>
+  <text x="825" y="90" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#68d391" text-anchor="middle" font-weight="600">MIT License</text>
+
+  <rect x="660" y="106" width="210" height="26" rx="5" fill="#2d3748"/>
+  <text x="765" y="124" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#90cdf4" text-anchor="middle">Beginner → Advanced</text>
+</svg>

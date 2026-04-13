@@ -1,9 +1,15 @@
 # Python Projects
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green)
-![Last Commit](https://img.shields.io/github/last-commit/GScandelari/python_projects)
-![Stars](https://img.shields.io/github/stars/GScandelari/python_projects?style=social)
+<p align="center">
+  <img src="assets/banner.svg" alt="Python Projects Banner" width="100%"/>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/License-MIT-green" alt="License"/>
+  <img src="https://img.shields.io/github/last-commit/GScandelari/python_projects" alt="Last Commit"/>
+  <img src="https://img.shields.io/github/stars/GScandelari/python_projects?style=social" alt="Stars"/>
+</p>
 
 A structured learning repository covering Python from beginner to advanced level — with exercises, solutions, mini-projects, and Jupyter Notebooks for every concept.
 
@@ -96,6 +102,10 @@ python_projects/
 ---
 
 ## Roadmap
+
+<p align="center">
+  <img src="assets/roadmap.png" alt="Learning Roadmap" width="95%"/>
+</p>
 
 ### Beginner
 - [x] 01 - Fundamentals (variables, types, operators)

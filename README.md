@@ -5,10 +5,17 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/Python-3.11%2B-blue?logo=python&logoColor=white" alt="Python"/>
   <img src="https://img.shields.io/badge/License-MIT-green" alt="License"/>
   <img src="https://img.shields.io/github/last-commit/GScandelari/python_projects" alt="Last Commit"/>
   <img src="https://img.shields.io/github/stars/GScandelari/python_projects?style=social" alt="Stars"/>
+  <a href="https://gscandelari.github.io/python_projects/">
+    <img src="https://img.shields.io/badge/GitHub%20Pages-live-0a7ebe?logo=github" alt="GitHub Pages"/>
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://gscandelari.github.io/python_projects/"><strong>🌐 gscandelari.github.io/python_projects</strong></a>
 </p>
 
 A structured learning repository covering Python from beginner to advanced level — with exercises, solutions, mini-projects, and Jupyter Notebooks for every concept.
@@ -20,6 +27,7 @@ A structured learning repository covering Python from beginner to advanced level
 - [About](#about)
 - [Repository Structure](#repository-structure)
 - [Roadmap](#roadmap)
+- [Docs & Resources](#docs--resources)
 - [How to Use](#how-to-use)
 - [Dependencies](#dependencies)
 - [Contributing](#contributing)
@@ -89,14 +97,26 @@ python_projects/
 │   ├── 01-requests-beautifulsoup/ # HTTP requests, scraping, pagination
 │   └── 02-automation/             # pathlib, shutil, subprocess, logging, schedule
 │
-├── assets/                       # Images, diagrams (to be populated)
-├── docs/                         # Extended documentation (to be populated)
-├── exercises/                    # Standalone cross-topic exercise sets (to be populated)
+├── assets/                       # SVG banner + 7 concept diagrams (PNG)
+│   ├── banner.svg
+│   ├── roadmap.png
+│   ├── generate_diagrams.py
+│   └── *.png
+│
+├── docs/                         # Cheatsheets, interview prep, setup guides
+│   ├── cheatsheets/              # python-core, oop, async, pandas, git
+│   ├── interview-prep/           # python-basics, oop-questions, algorithms
+│   └── guides/                   # venv-setup, pytest-guide, jupyter-guide
+│
+├── website/                      # GitHub Pages landing page source
+│   └── index.html
+│
+├── exercises/                    # Standalone cross-topic exercise sets (backlog)
 │   ├── beginner/
 │   ├── intermediate/
 │   └── advanced/
-├── notebooks/                    # Standalone thematic notebooks (to be populated)
-└── solutions/                    # Standalone cross-topic solutions (to be populated)
+├── notebooks/                    # Standalone thematic notebooks (backlog)
+└── solutions/                    # Standalone cross-topic solutions (backlog)
 ```
 
 ---
@@ -135,12 +155,27 @@ python_projects/
 - [x] Web Development (FastAPI, Flask)
 - [x] Automation & Scraping (Requests, BeautifulSoup, pathlib, schedule)
 
-### Backlog (not yet started)
-- [ ] `assets/` — diagrams and visual aids for each module
-- [ ] `docs/` — extended write-ups, cheat sheets, interview prep
+### Assets & Docs
+- [x] `assets/` — SVG banner + 7 concept diagrams (roadmap, data types, OOP, concurrency, design patterns, data science, web API)
+- [x] `docs/cheatsheets/` — Python Core, OOP, Async, Pandas, Git
+- [x] `docs/interview-prep/` — Python Basics, OOP Questions, Algorithms & DS
+- [x] `docs/guides/` — Virtual Environments, pytest, Jupyter
+- [x] `website/` — GitHub Pages landing page (auto-deployed via Actions)
+
+### Backlog
 - [ ] `exercises/` — cross-topic standalone exercise sets
-- [ ] `notebooks/` — thematic standalone notebooks (e.g. algorithms, interview problems)
+- [ ] `notebooks/` — thematic standalone notebooks (algorithms, interview problems)
 - [ ] `solutions/` — cross-topic standalone solutions
+
+---
+
+## Docs & Resources
+
+| Category | Files |
+|---|---|
+| **Cheatsheets** | [Python Core](docs/cheatsheets/python-core.md) · [OOP](docs/cheatsheets/oop.md) · [Async](docs/cheatsheets/async.md) · [Pandas](docs/cheatsheets/pandas.md) · [Git](docs/cheatsheets/git.md) |
+| **Interview Prep** | [Python Basics](docs/interview-prep/python-basics.md) · [OOP Questions](docs/interview-prep/oop-questions.md) · [Algorithms](docs/interview-prep/algorithms.md) |
+| **Guides** | [Venv & pip](docs/guides/venv-setup.md) · [pytest](docs/guides/pytest-guide.md) · [Jupyter](docs/guides/jupyter-guide.md) |
 
 ---
 

@@ -97,7 +97,7 @@ python_projects/
 ### Extras
 - [x] Data Science (pandas, matplotlib, numpy)
 - [x] Web Development (FastAPI / Flask)
-- [ ] Automation & Scraping
+- [x] Automation & Scraping
 
 ---
 

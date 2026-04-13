@@ -1,0 +1,330 @@
+/* ── Reset & Variables ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #0d1117;
+  --bg-card:   #161b22;
+  --bg-hover:  #1c2128;
+  --border:    #30363d;
+  --border-hl: #3776ab;
+  --py-blue:   #3776ab;
+  --py-yellow: #ffd43b;
+  --text:      #e6edf3;
+  --muted:     #8b949e;
+  --radius:    10px;
+  --gap:       1.5rem;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a { color: var(--py-blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Layout helpers ────────────────────────────────────────── */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+section { padding: 4rem 0; }
+section + section { border-top: 1px solid var(--border); }
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+  color: var(--text);
+}
+
+.section-sub {
+  color: var(--muted);
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+/* ── Hero ──────────────────────────────────────────────────── */
+.hero {
+  padding: 5rem 0 4rem;
+  text-align: center;
+  background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(55,118,171,0.18), transparent);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-logo {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  display: block;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--text) 40%, var(--py-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-tagline {
+  color: var(--muted);
+  font-size: 1.1rem;
+  margin: 0.75rem auto 2rem;
+  max-width: 540px;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.badge {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.badge span { color: var(--py-yellow); font-weight: 600; }
+
+.cta-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: opacity 0.15s, transform 0.15s;
+  cursor: pointer;
+}
+.btn:hover { opacity: 0.85; transform: translateY(-1px); text-decoration: none; }
+
+.btn-primary {
+  background: var(--py-blue);
+  color: #fff;
+  border: none;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+/* ── Cards grid ────────────────────────────────────────────── */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--gap);
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.5rem;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  border-color: var(--border-hl);
+  background: var(--bg-hover);
+  transform: translateY(-2px);
+}
+
+.card-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.9rem;
+  flex-grow: 1;
+  align-content: flex-start;
+}
+
+.card-footer {
+  margin-top: 1.1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.btn-card {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-hl);
+  color: var(--py-blue);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: background 0.15s, color 0.15s, transform 0.15s;
+}
+
+.btn-card:hover {
+  background: var(--py-blue);
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.tag {
+  background: rgba(55,118,171,0.12);
+  color: #79aacc;
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+.card-level {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  margin-bottom: 0.65rem;
+}
+
+.level-beginner    { background: rgba(63,185,80,0.15);  color: #3fb950; }
+.level-intermediate{ background: rgba(210,153,34,0.15); color: #d2991f; }
+.level-advanced    { background: rgba(248,81,73,0.15);  color: #f85149; }
+.level-data        { background: rgba(130,80,255,0.15); color: #9a6bff; }
+.level-web         { background: rgba(56,182,255,0.15); color: #38b6ff; }
+.level-auto        { background: rgba(255,166,0,0.15);  color: #ffa600; }
+
+/* ── Resource cards ────────────────────────────────────────── */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--gap);
+}
+
+.resource-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.4rem;
+  transition: border-color 0.2s, transform 0.15s;
+}
+
+.resource-card:hover {
+  border-color: var(--border-hl);
+  transform: translateY(-2px);
+}
+
+.resource-card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.resource-card p {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.resource-list {
+  list-style: none;
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.resource-list li::before {
+  content: '→ ';
+  color: var(--py-blue);
+  font-size: 0.8rem;
+}
+
+.resource-list li {
+  font-size: 0.83rem;
+  color: var(--muted);
+}
+
+/* ── Stats bar ─────────────────────────────────────────────── */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2.5rem 0;
+  justify-content: center;
+}
+
+.stat { text-align: center; }
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--py-yellow);
+  display: block;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.3rem;
+}
+
+/* ── Footer ────────────────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+footer p { color: var(--muted); font-size: 0.85rem; }
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .hero { padding: 3rem 0 2.5rem; }
+  section { padding: 2.5rem 0; }
+  .stats { gap: 1.5rem; }
+}
